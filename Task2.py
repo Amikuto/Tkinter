@@ -9,7 +9,7 @@ H = 500
 print(W, H)
 cX, cY = W / 2, H / 2
 
-root.attributes('-fullscreen', True)
+# root.attributes('-fullscreen', True)
 
 
 def esc(event):
@@ -32,19 +32,49 @@ oval = c.create_oval(center[0] - radius, center[1] - radius,
 
 radius = H - 400
 
-center = W - 350, H/2
+center = W - 400, H - 250
 print(center)
 c.create_oval(center[0] - radius, center[1] - radius,
               center[0] + radius, center[1] + radius,
               outline="white")
 
-center = W - 150, H/2
+center = W - 100, H - 250
 print(center)
 c.create_oval(center[0] - radius, center[1] - radius,
               center[0] + radius, center[1] + radius,
               outline="white")
 
 
+
+
+
+
+
+radius = H - 450
+
+center = W - 450, H - 250
+print(center)
+c.create_oval(center[0] - radius, center[1] - radius,
+              center[0] + radius, center[1] + radius,
+              outline="white")
+
+center = W - 50, H - 250
+print(center)
+c.create_oval(center[0] - radius, center[1] - radius,
+              center[0] + radius, center[1] + radius,
+              outline="white")
+
+center = W - 350, H - 250
+print(center)
+c.create_oval(center[0] - radius, center[1] - radius,
+              center[0] + radius, center[1] + radius,
+              outline="white")
+
+center = W - 150, H - 250
+print(center)
+c.create_oval(center[0] - radius, center[1] - radius,
+              center[0] + radius, center[1] + radius,
+              outline="white")
 
 
 
