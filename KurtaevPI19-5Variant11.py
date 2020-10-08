@@ -1,5 +1,12 @@
+from random import choice
 from tkinter import *
 from math import log
+
+
+def circle_color():
+    color = choice(['aqua', 'blue', 'fuchsia', 'green', 'maroon', 'orange', \
+                    'pink', 'purple', 'red', 'yellow', 'violet', 'indigo', 'chartreuse', 'lime', '#f55c4b'])
+    return color
 
 
 def esc(event):
@@ -8,21 +15,23 @@ def esc(event):
 
 def main_func(center, z):  # Берем центр и переменную цикла
     """Данная функция принимает центр и от него слева и справа на равноудаленном расстоянии рисует 2 круга"""
-    buff = W // z  # Бафферная переменная вычисляющая середину растояния от края до центра
+    buff = W // z - 15  # Бафферная переменная вычисляющая середину растояния от края до центра
 
-    radius = W / z  # Радиус кругов
+    radius = W / z - 20  # Радиус кругов
+    color = circle_color()
+    color = None
 
     # Определяем центр круга при помощи вычитания от центра круга половину расстояния до края
     new_center = center - buff, H - 250
     c.create_oval(new_center[0] - radius, new_center[1] - radius,
                   new_center[0] + radius, new_center[1] + radius,
-                  outline="white")
+                  outline="white", fill=color)
 
     # Определяем центр круга при помощи добавления от центра круга половину расстояния до края
     new_center = center + buff, H - 250
     c.create_oval(new_center[0] - radius, new_center[1] - radius,
                   new_center[0] + radius, new_center[1] + radius,
-                  outline="white")
+                  outline="white", fill=color)
 
     # функция отрисовки кругов в левую сторону
     def into_left(ctr, z):
@@ -60,8 +69,7 @@ if __name__ == "__main__":
     c.pack()
 
     loop = 2  # Переменная для уменьшения радиуса
-    num = int(input("type num of loops: "))  # Ввод пользователем колличества отприсовываемых кругов
-    # num = 10
+    num = 4
 
     main_func(W, loop)  # Передаем в функцию центр (в данном случае ширину) и переменную цикла
 
