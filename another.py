@@ -47,7 +47,7 @@ def toAngle(angle):
 
 if __name__ == '__main__':
 
-    angleBetweenSticks = 90  # Угол
+    angleBetweenSticks = 30  # Угол
     lenFactor = 0.8  # Множитель длины
     startLength = 100  # Начальная длина
     minLength = 5  # Минимальная длина после прекращения
@@ -59,9 +59,12 @@ if __name__ == '__main__':
 
     root.bind('<Escape>', esc)
 
+    x = width/2
+    y = height
+
     root_x = width / 2
     root_y = height // 2
-    # c.create_line(root_x, root_y, x, y, fill='black', width=10)
+    c.create_line(root_x, root_y, x, y, fill='black', width=10)
 
     stick((root_x, root_y), 0, startLength * lenFactor)
     root.mainloop()
